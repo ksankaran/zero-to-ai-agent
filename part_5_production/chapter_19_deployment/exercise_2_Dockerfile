@@ -1,0 +1,33 @@
+# From: Zero to AI Agent, Chapter 19, Section 19.1
+# File: exercise_2_Dockerfile (multi-stage build)
+
+# Stage 1: Builder - install dependencies
+FROM python:3.13-slim as builder
+
+WORKDIR /app
+
+# Create and use virtual environment
+RUN python -m venv /opt/venv
+ENV PATH="/opt/venv/bin:$PATH"
+
+# Install dependencies
+COPY requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt
+
+# Stage 2: Runtime - only what we need
+FROM python:3.13-slim
+
+WORKDIR /app
+
+# Copy virtual environment from builder
+COPY --from=builder /opt/venv /opt/venv
+ENV PATH="/opt/venv/bin:$PATH"
+
+# Copy application code
+COPY research_agent.py .
+
+# Security: non-root user
+RUN useradd --create-home appuser
+USER appuser
+
+CMD ["python", "research_agent.py"]

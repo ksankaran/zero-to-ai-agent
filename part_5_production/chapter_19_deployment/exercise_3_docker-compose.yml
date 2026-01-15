@@ -1,0 +1,22 @@
+# From: Zero to AI Agent, Chapter 19, Section 19.1
+# File: exercise_3_docker-compose.yml (development setup)
+
+version: '3.8'
+
+services:
+  agent:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    env_file:
+      - .env
+    volumes:
+      # Mount source code for development
+      - ./research_agent.py:/app/research_agent.py
+      # Mount any additional modules
+      - ./src:/app/src
+    ports:
+      - "8000:8000"
+    # Keep container running for development
+    stdin_open: true
+    tty: true

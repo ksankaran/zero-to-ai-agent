@@ -1,0 +1,4 @@
+# requirements.txt
+langgraph==1.0.4
+langchain-openai==1.1.1
+python-dotenv==1.2.1

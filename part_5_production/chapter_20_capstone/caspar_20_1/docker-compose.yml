@@ -1,0 +1,23 @@
+# From: Zero to AI Agent, Chapter 20, Section 20.1
+# File: docker-compose.yml
+
+services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: caspar_postgres
+    environment:
+      POSTGRES_USER: caspar
+      POSTGRES_PASSWORD: caspar_secret
+      POSTGRES_DB: caspar_db
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U caspar -d caspar_db"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  postgres_data:

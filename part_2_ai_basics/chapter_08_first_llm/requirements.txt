@@ -1,0 +1,4 @@
+# requirements.txt
+openai==2.9.0
+python-dotenv==1.2.1
+anthropic==0.75.0

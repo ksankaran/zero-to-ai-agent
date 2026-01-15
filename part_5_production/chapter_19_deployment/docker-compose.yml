@@ -1,0 +1,14 @@
+# From: Zero to AI Agent, Chapter 19, Section 19.1
+# File: docker-compose.yml
+
+version: '3.8'
+
+services:
+  agent:
+    build: .
+    env_file:
+      - .env
+    volumes:
+      - .:/app
+    ports:
+      - "8000:8000"

@@ -1,0 +1,106 @@
+{
+  "dataset_version": "1.0",
+  "created": "2024-01-15",
+  "description": "Sample test dataset for customer service agent evaluation",
+  "cases": [
+    {
+      "id": "acct_001",
+      "category": "account",
+      "subcategory": "password_reset",
+      "query": "How do I reset my password?",
+      "expected_response": {
+        "must_contain": ["step", "email", "link"],
+        "must_not_contain": ["call us", "payment"],
+        "reference_answer": "To reset your password, go to Settings > Security > Reset Password. You'll receive an email with a reset link that expires in 24 hours."
+      },
+      "difficulty": "easy",
+      "source": "golden",
+      "tags": ["common", "self-service"]
+    },
+    {
+      "id": "acct_002",
+      "category": "account",
+      "subcategory": "password_reset",
+      "query": "I forgot my login credentials, what should I do?",
+      "expected_response": {
+        "must_contain": ["password", "reset", "email"],
+        "must_not_contain": [],
+        "reference_answer": "No problem! You can reset your password by clicking 'Forgot Password' on the login page. We'll send a reset link to your registered email."
+      },
+      "difficulty": "easy",
+      "source": "synthetic",
+      "tags": ["common", "self-service", "variation"]
+    },
+    {
+      "id": "order_001",
+      "category": "orders",
+      "subcategory": "status",
+      "query": "Where is my order? I ordered it last week.",
+      "expected_response": {
+        "must_contain": ["order", "track", "status"],
+        "must_not_contain": ["refund"],
+        "reference_answer": "I'd be happy to help you track your order. Could you provide your order number? You can find it in the confirmation email we sent when you placed your order."
+      },
+      "difficulty": "easy",
+      "source": "real_user",
+      "tags": ["common", "requires_lookup"]
+    },
+    {
+      "id": "order_002",
+      "category": "orders",
+      "subcategory": "cancellation",
+      "query": "Cancel my order",
+      "expected_response": {
+        "must_contain": ["order", "cancel"],
+        "must_not_contain": [],
+        "reference_answer": "I can help you cancel your order. Could you provide the order number? Note that orders can only be cancelled before they ship."
+      },
+      "difficulty": "medium",
+      "source": "adversarial",
+      "tags": ["ambiguous", "needs_clarification"],
+      "notes": "Ambiguous - user has multiple orders. Agent should ask which one."
+    },
+    {
+      "id": "billing_001",
+      "category": "billing",
+      "subcategory": "refund",
+      "query": "I was charged twice for the same item, I want my money back!",
+      "expected_response": {
+        "must_contain": ["refund", "review", "apologize"],
+        "must_not_contain": ["your fault"],
+        "reference_answer": "I sincerely apologize for the duplicate charge. Let me review your account and process a refund for the extra charge immediately. This should reflect in your account within 3-5 business days."
+      },
+      "difficulty": "medium",
+      "source": "real_user",
+      "tags": ["complaint", "billing_error", "urgent"]
+    },
+    {
+      "id": "edge_001",
+      "category": "edge_cases",
+      "subcategory": "out_of_scope",
+      "query": "What's the weather like tomorrow?",
+      "expected_response": {
+        "must_contain": ["help", "support"],
+        "must_not_contain": ["weather", "forecast", "temperature"],
+        "reference_answer": "I'm a customer service assistant and can't provide weather information. However, I'm happy to help with any questions about your account, orders, or our products!"
+      },
+      "difficulty": "easy",
+      "source": "adversarial",
+      "tags": ["out_of_scope", "redirect"]
+    },
+    {
+      "id": "edge_002",
+      "category": "edge_cases",
+      "subcategory": "ambiguous",
+      "query": "How much does it cost?",
+      "expected_response": {
+        "must_contain": ["which", "product", "help"],
+        "must_not_contain": [],
+        "reference_answer": "I'd be happy to help with pricing information! Could you let me know which product or service you're interested in?"
+      },
+      "difficulty": "medium",
+      "source": "adversarial",
+      "tags": ["ambiguous", "needs_clarification"]
+    }
+  ]
+}

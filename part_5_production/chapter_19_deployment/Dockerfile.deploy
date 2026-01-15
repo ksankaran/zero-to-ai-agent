@@ -1,0 +1,16 @@
+# From: Zero to AI Agent, Chapter 19, Section 19.3
+# File: Dockerfile
+# Description: Docker configuration for deploying AI agent API
+
+FROM python:3.11-slim
+
+WORKDIR /app
+
+COPY requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt
+
+COPY . .
+
+EXPOSE 8000
+
+CMD ["uvicorn", "production_api:app", "--host", "0.0.0.0", "--port", "8000"]

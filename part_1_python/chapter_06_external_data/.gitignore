@@ -1,0 +1,21 @@
+# Environment variables
+.env
+.env.local
+.env.production
+
+# But include the example
+!.env.example
+
+# Python
+__pycache__/
+*.pyc
+.python-version
+
+# IDE
+.vscode/
+.idea/
+
+# Generated files from example scripts
+*.json
+*.txt
+*.csv

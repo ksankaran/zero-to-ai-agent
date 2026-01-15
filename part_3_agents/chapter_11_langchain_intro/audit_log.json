@@ -1,0 +1,69 @@
+[
+  {
+    "timestamp": "2025-12-19T18:44:34.108904",
+    "query_length": 31,
+    "model_used": "cloud",
+    "private_info_detected": [],
+    "query_hash": -3887602652204861062
+  },
+  {
+    "timestamp": "2025-12-19T18:44:35.436873",
+    "query_length": 46,
+    "model_used": "local",
+    "private_info_detected": [
+      "ssn"
+    ],
+    "query_hash": -5588692336663545732
+  },
+  {
+    "timestamp": "2025-12-19T18:44:38.517509",
+    "query_length": 33,
+    "model_used": "cloud",
+    "private_info_detected": [],
+    "query_hash": 1537316268513395208
+  },
+  {
+    "timestamp": "2025-12-19T18:44:41.118004",
+    "query_length": 28,
+    "model_used": "local",
+    "private_info_detected": [
+      "email"
+    ],
+    "query_hash": 6444011130908867524
+  },
+  {
+    "timestamp": "2025-12-19T18:44:42.388489",
+    "query_length": 29,
+    "model_used": "local",
+    "private_info_detected": [
+      "medical"
+    ],
+    "query_hash": 2330842709384495391
+  },
+  {
+    "timestamp": "2025-12-19T18:44:48.043195",
+    "query_length": 32,
+    "model_used": "cloud",
+    "private_info_detected": [],
+    "query_hash": -3024890911305456817
+  },
+  {
+    "timestamp": "2025-12-19T18:44:50.641546",
+    "query_length": 36,
+    "model_used": "local",
+    "private_info_detected": [
+      "phone",
+      "financial",
+      "keyword:bank",
+      "keyword:account"
+    ],
+    "query_hash": 8979963502782311471
+  },
+  {
+    "timestamp": "2025-12-19T18:44:52.944979",
+    "query_length": 29,
+    "model_used": "cloud",
+    "private_info_detected": [],
+    "query_hash": 858891297451877822
+  }
+]
