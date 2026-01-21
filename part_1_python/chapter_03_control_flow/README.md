@@ -205,3 +205,16 @@ Build a program that prints various patterns:
 - Use nested loops and conditions to create each pattern
 
 ► `part_1_python/chapter_03_control_flow/exercise_2_3_7_solution.py`
+
+---
+
+## Challenge Project: Build Your Own AI Decision System
+
+Create a "Personal AI Assistant" that:
+1. Greets the user based on time of day (using conditionals)
+2. Offers a menu of services (using loops)
+3. Can play a simple game (using nested structures)
+4. Keeps track of user preferences (preparing for next chapter's data structures)
+5. Has a conversation mode (using while loops and string checking)
+
+This project combines everything from Chapter 3 and prepares you for the data structures coming in Chapter 4!

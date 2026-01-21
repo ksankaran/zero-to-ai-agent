@@ -372,3 +372,82 @@ Your e-commerce agent successfully processes orders 95% of the time but fails my
 - Prevention strategies
 
 ► `part_3_agents/chapter_10_what_are_agents/solutions_10_7.md#exercise-3-solution`
+
+---
+
+## Challenge Project: Build Your First Intelligent Agent
+
+> `part_3_agents/chapter_10_what_are_agents/agent_challenge_starter.py`
+
+### The Challenge: Personal Research Assistant
+
+Create an agent that can research topics and provide comprehensive summaries. This agent will demonstrate the difference between a simple chatbot and a true agent.
+
+### Core Requirements:
+
+Your agent must:
+
+**1. Demonstrate Agent vs Chatbot Difference**
+- Accept a research topic from the user
+- Break it down into subtopics (reasoning)
+- Gather information from multiple sources (tool use)
+- Remember what it's already researched (memory)
+- Produce a comprehensive report
+
+**2. Implement the Agent Loop**
+- Observe: Understand the research request
+- Think: Plan the research approach
+- Act: Gather information
+- Reflect: Evaluate if enough information is gathered
+- Learn: Remember findings for the report
+
+**3. Show Multiple Autonomy Levels**
+- Level 2: Suggest research topics and sources
+- Level 3: Research with user confirmation at key points
+- Level 4: Complete autonomous research within guidelines
+
+**4. Handle Real Challenges**
+- Implement iteration limits (prevent infinite loops)
+- Track token usage (cost awareness)
+- Handle missing information gracefully
+- Know when to stop researching
+
+### Implementation Guidelines:
+
+Since we haven't introduced LangChain yet, use this simplified approach:
+
+```python
+class ResearchAgent:
+    def __init__(self):
+        self.memory = []  # Store research findings
+        self.iteration_count = 0
+        self.max_iterations = 10
+
+    def research_loop(self, topic):
+        """Main agent loop"""
+        while self.iteration_count < self.max_iterations:
+            # Observe
+            current_knowledge = self.assess_knowledge()
+
+            # Think
+            next_action = self.decide_next_action(current_knowledge)
+
+            # Act
+            result = self.execute_action(next_action)
+
+            # Reflect
+            if self.is_research_complete():
+                break
+
+            # Learn
+            self.memory.append(result)
+            self.iteration_count += 1
+
+        return self.compile_report()
+```
+
+### Bonus Challenges:
+
+1. **Add Different Agent Types**: Implement both ReAct and Plan-and-Execute approaches
+2. **Cost Tracking**: Simulate token usage and report total "cost" at the end
+3. **Error Handling**: Simulate tool failures and implement retry logic

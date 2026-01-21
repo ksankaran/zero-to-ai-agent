@@ -370,3 +370,84 @@ Create a tool that:
 - Generates a security report
 
 ► `exercise_4_7_6_solution.py`
+
+---
+
+## Challenge Project: Multi-Provider AI Assistant Hub
+
+Create an AI assistant that can intelligently switch between providers, manage costs, and handle rate limits.
+
+### Project Requirements
+
+Your assistant should:
+1. Work with at least 2 different providers
+2. Automatically choose the cheapest suitable model
+3. Handle rate limits gracefully
+4. Track and report costs
+5. Cache responses to save money
+6. Provide a simple chat interface
+
+### Starter Code Structure
+
+> `part_2_ai_basics/chapter_07_intro_ai_llm/chapter7_challenge_project.py`
+
+```python
+class AssistantHub:
+    def __init__(self):
+        self.models = {}  # Model configurations
+        self.cache = {}   # Response cache
+        self.cost_monitor = None  # Cost tracking
+        self.rate_limiters = {}  # Rate limit management
+
+    def chat(self, user_input):
+        # 1. Check cache
+        # 2. Select best model
+        # 3. Check rate limits
+        # 4. Make API call
+        # 5. Track costs
+        # 6. Cache response
+        return response
+```
+
+### Implementation Hints
+
+**Hint 1: Start Simple**
+- Get one provider working first
+- Add features incrementally
+- Test each component separately
+
+**Hint 2: Use Your Toolkit**
+- Reuse code from the chapter sections
+- The ResponseCache from 7.7
+- The RateLimiter from 7.6
+- The CostMonitor from 7.7
+
+**Hint 3: Handle Errors Gracefully**
+```python
+try:
+    response = api_call()
+except RateLimitError:
+    # Switch to different provider
+except AuthenticationError:
+    # Check API keys
+except InsufficientQuotaError:
+    # Use cheaper model or cache
+```
+
+### Success Criteria
+
+Your project is complete when:
+- It successfully handles conversations
+- Costs are tracked and reported
+- Rate limits don't cause crashes
+- At least 2 providers work
+- Responses are cached
+- You can export conversation history
+
+### Stretch Goals
+
+- Add a web interface with Flask
+- Implement streaming responses
+- Add voice input/output
+- Create usage analytics dashboard
+- Add prompt templates for common tasks

@@ -349,3 +349,65 @@ Build a simple alerting system that:
 - Supports different severity levels (warning, critical)
 
 > `part_4_langgraph/chapter_15_stateful_agents/exercise_3_15_7_solution.py`
+
+---
+
+## Challenge Project: Persistent Task Manager Agent
+
+Time to put everything together! Build a complete task management agent that demonstrates all the concepts from this chapter.
+
+> `part_4_langgraph/chapter_15_stateful_agents/task_manager_challenge.py`
+
+### Requirements:
+
+Your agent must implement:
+
+**1. State Schema** (15.2)
+- Tasks with id, title, description, status, priority
+- Status enum: pending, in_progress, completed, failed
+- Priority levels: low, medium, high, urgent
+- Pydantic validation for task creation
+
+**2. State Management** (15.1, 15.3)
+- Accumulating task list using reducers
+- Separate completed vs active task counts
+- Action history log
+
+**3. Persistence** (15.4)
+- SQLite persistence across restarts
+- Multiple user support via thread IDs
+- Resume any user's task list
+
+**4. Resilience** (15.5, 15.6)
+- Retry logic when "syncing" tasks (simulate external API)
+- Graceful handling when sync fails
+- Never lose tasks due to failures
+
+**5. Monitoring** (15.7)
+- Track operations performed
+- Log all state changes
+- Health check endpoint
+
+### Commands to Support:
+
+- `add <title>` - Add a new task
+- `complete <id>` - Mark task complete
+- `list` - Show all tasks
+- `stats` - Show task statistics
+- `history` - Show action history
+- `health` - Run health check
+
+### Bonus Challenges:
+
+- Add task due dates with overdue detection
+- Implement task priorities that affect sort order
+- Add "undo" using checkpoint history (time travel!)
+- Export task history to JSON
+
+### Evaluation Criteria:
+
+- Tasks persist across program restarts
+- Invalid tasks are rejected with clear errors
+- Sync failures don't crash or lose data
+- Monitoring shows clear operational status
+- Multiple users have isolated task lists

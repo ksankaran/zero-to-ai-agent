@@ -424,3 +424,49 @@ Create a tool that calls an external API with:
 Simulate various failure scenarios and verify your tool handles them all.
 
 ► `part_3_agents/chapter_12_tools_functions/exercise_3_12_6_solution.py`
+
+---
+
+## Challenge Project: Build a Personal Assistant Agent
+
+Create a comprehensive personal assistant that can:
+
+### Required Features:
+
+**1. Time Management**
+- Tell current time in different timezones
+- Calculate time differences
+- Set reminders (save to file)
+
+**2. Information Retrieval**
+- Search the web for current info
+- Look up facts on Wikipedia
+- Provide definitions
+
+**3. Task Management**
+- Create todo lists (save to file)
+- Mark tasks complete
+- Show pending tasks
+
+**4. Calculations**
+- Basic math operations
+- Unit conversions (meters to feet, etc.)
+- Currency conversion (simulated)
+
+**5. Weather & Location**
+- Get weather for any city
+- Compare weather between cities
+- Suggest clothing based on weather
+
+► `part_3_agents/chapter_12_tools_functions/personal_assistant_solution.py`
+
+### Example Interaction:
+
+```
+User: "What's the weather in Paris and New York, which is warmer,
+      and add 'pack umbrella' to my todo list if either is rainy"
+
+Agent: [Uses weather tool twice, compares, conditionally uses todo tool]
+```
+
+This project brings together EVERYTHING from Chapter 12. Build it, and you'll have created a genuinely useful AI assistant!

@@ -334,3 +334,134 @@ Given numbers = range(1, 21):
 - Create a list of tuples (number, square, cube) for numbers 1-10
 
 ► `part_1_python/chapter_04_data_structures/exercise_3_4_7_solution.py`
+
+---
+
+## Challenge Project: Personal Data Dashboard
+
+### The Challenge: Build "DataMaster" - Your Personal Data Analysis System
+
+Create a comprehensive data analysis system that combines ALL the data structures you've learned to process real-world information!
+
+### Project Requirements:
+
+#### Part 1: Data Collection System
+Create a system that can:
+- **Store** multiple datasets (use appropriate structures)
+- **Import** data from CSV files (parse into dictionaries)
+- **Track** unique values across all datasets (sets)
+- **Maintain** data history (lists with timestamps)
+
+#### Part 2: Analysis Engine
+Build analysis functions that:
+- **Calculate** statistics (mean, median, mode) using lists
+- **Group** data by categories using dictionaries
+- **Find** common elements across datasets using sets
+- **Generate** summaries using comprehensions
+
+#### Part 3: Query System
+Implement a query interface that can:
+- **Filter** data based on conditions
+- **Sort** results by any field
+- **Join** data from multiple sources
+- **Export** results in different formats
+
+#### Part 4: Performance Monitor
+Track system performance:
+- **Measure** operation speeds (list vs set lookups)
+- **Store** performance metrics (dictionaries)
+- **Identify** bottlenecks (analyze with comprehensions)
+- **Optimize** data structure choices
+
+### Starter Code Structure:
+
+► `part_1_python/chapter_04_data_structures/datamaster.py`
+
+```python
+# Initialize data structures for different purposes
+datasets = {}      # Dictionary: store named datasets
+unique_values = set()  # Set: track unique values
+history = []       # List: record operations in order
+metadata = {}      # Dictionary: store dataset info
+
+# Load sample data (list of dictionaries)
+sales_data = [
+    {"product": "Widget A", "price": 29.99, "quantity": 10},
+    {"product": "Widget B", "price": 49.99, "quantity": 5},
+]
+datasets["sales"] = sales_data
+
+# Use SET to find unique products
+unique_products = {record["product"] for record in sales_data}
+
+# Use DICTIONARY to calculate revenue by product
+revenue_by_product = {}
+for record in sales_data:
+    product = record["product"]
+    revenue = record["price"] * record["quantity"]
+    revenue_by_product[product] = revenue_by_product.get(product, 0) + revenue
+
+# Use LIST comprehension to filter high-value sales
+high_value = [r for r in sales_data if r["price"] * r["quantity"] > 100]
+```
+
+The starter code demonstrates:
+- Using dictionaries to store and organize datasets
+- Using sets to track unique values efficiently
+- Using lists to maintain ordered records
+- Using comprehensions to transform and filter data
+
+### Challenge Levels:
+
+#### Bronze Level: Basic Implementation
+- Implement all basic methods
+- Handle at least 2 datasets
+- Use all 4 data structures appropriately
+- Generate a simple text report
+
+#### Silver Level: Enhanced Features
+- Add data validation with meaningful errors
+- Implement caching for expensive operations
+- Support multiple file formats (CSV, JSON)
+- Create performance comparison reports
+
+#### Gold Level: Advanced System
+- Real-time data updates with event tracking
+- Complex multi-condition queries
+- Data relationship mapping and visualization
+- Export to multiple formats with formatting
+- Performance optimization with benchmarks
+
+### Success Criteria:
+
+Your DataMaster system should:
+- Use lists for ordered data and history
+- Use tuples for immutable configuration
+- Use dictionaries for lookups and mappings
+- Use sets for uniqueness and comparisons
+- Combine structures effectively (list of dicts, dict of sets, etc.)
+- Utilize comprehensions for data transformation
+- Choose the right structure for each task
+- Handle errors gracefully
+- Provide useful analysis insights
+
+### Bonus Challenges:
+
+**Memory Challenge**: Implement a memory limit system that automatically switches from lists to generators when data gets large
+
+**Speed Challenge**: Create a benchmark suite that proves your data structure choices are optimal
+
+**Visualization Challenge**: Add a simple text-based visualization of your data (bar charts using characters)
+
+**AI Integration**: Use your data structures to prepare data for machine learning (feature vectors, normalized data)
+
+### What You'll Learn:
+
+This project will solidify your understanding of:
+- When to use each data structure
+- How to combine structures effectively
+- Performance implications of your choices
+- Real-world data processing patterns
+- Writing clean, maintainable code
+
+Remember: The best way to master data structures is to use them in a real project. This challenge gives you that opportunity while building something genuinely useful!

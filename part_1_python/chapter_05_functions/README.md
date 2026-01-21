@@ -528,3 +528,59 @@ Create a `Chatbot` class with:
 - Mood that changes based on conversation
 
 ► `exercise_3_5_8_solution.py`
+
+---
+
+## Challenge Project: Personal Assistant Module
+
+Time to put it all together! Create a personal assistant module that combines everything you've learned.
+
+### Project Requirements:
+
+Create a module called `personal_assistant.py` that includes:
+
+1. **A PersonalAssistant class** with methods for:
+   - Greeting the user (use time of day for appropriate greeting)
+   - Managing a to-do list (add, remove, list tasks)
+   - Setting reminders with timestamps
+   - Generating passwords
+   - Performing calculations
+
+2. **Utility functions** for:
+   - Text processing (clean, capitalize, word count)
+   - Date/time operations (days until date, age calculator)
+   - File operations (save/load assistant data)
+
+3. **Make it interactive** when run directly:
+   - Menu system for different features
+   - Save state between sessions (using JSON)
+
+4. **Documentation**:
+   - Module docstring
+   - Function/method docstrings
+   - Comments for complex logic
+
+### Starter Code:
+
+> `part_1_python/chapter_05_functions/personal_assistant.py`
+
+```python
+"""Personal Assistant Module - manages tasks and more!"""
+
+class PersonalAssistant:
+    """Your personal Python assistant"""
+    def __init__(self, name="PyAssistant"):
+        self.name = name
+        self.tasks = []
+
+    def add_task(self, task):
+        """Add a task to the to-do list"""
+        self.tasks.append(task)
+        return f"Added: {task}"
+```
+
+### Bonus Challenges:
+1. Add a weather feature using an API
+2. Include a calculator with history
+3. Add data persistence with JSON files
+4. Create tests for your module

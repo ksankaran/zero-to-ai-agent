@@ -405,3 +405,37 @@ Create a health check system that:
 - Flags agents with high error rates
 
 > `part_4_langgraph/chapter_16_multi_agent/exercise_3_16_7_solution.py`
+
+---
+
+## Challenge Project: Build a Content Creation Pipeline
+
+> `part_4_langgraph/chapter_16_multi_agent/content_creation_pipeline.py`
+
+Create a multi-agent content creation system that produces blog posts.
+
+### Required Agents:
+
+| Agent                | Role                                      |
+| -------------------- | ----------------------------------------- |
+| **Topic Researcher** | Gathers facts and background on the topic |
+| **Outline Creator**  | Structures the content into sections      |
+| **Draft Writer**     | Writes the initial draft                  |
+| **Editor**           | Reviews and improves the draft            |
+| **SEO Optimizer**    | Adds keywords and improves searchability  |
+
+### Requirements:
+
+1. **Pipeline Flow**: Research → Outline → Draft → Edit → SEO
+2. **Quality Loop**: Editor can send back to Writer (max 2 revisions)
+3. **State Management**: Track all outputs and revision count
+4. **Error Handling**: If any agent fails, system continues with fallback
+5. **Metrics**: Report time spent in each stage
+
+### Success Criteria:
+
+- [ ] All 5 agents implemented and working
+- [ ] Quality loop allows revisions
+- [ ] Graceful error handling
+- [ ] Metrics reported at end
+- [ ] Can produce a coherent 300+ word blog post

@@ -363,3 +363,67 @@ Save as `debug/error_recovery.py`
 > The solution uses `Callable` from the `typing` module. This type hint indicates a function or callable object. For example, `-> Callable` means "returns a function." This is useful when methods return other functions as recovery strategies.
 
 ► `part_3_agents/chapter_11_langchain_intro/exercise_3_11_7_solution.py`
+
+---
+
+## Challenge Project: Build Your Smart Study Assistant
+
+Time to put everything together! Create an intelligent study assistant using chains, prompts, and structured outputs.
+
+> `part_3_agents/chapter_11_langchain_intro/challenge_project_starter.py`
+
+### Requirements:
+
+**1. Multi-Provider Support**
+- Use GPT-3.5 for simple explanations
+- Use GPT-4 for complex topics
+- Use local models for private notes
+- Automatically select based on complexity
+
+**2. Smart Chain Modes**
+- Teacher Mode: Patient explanations with examples
+- Quiz Mode: Test your knowledge with questions
+- Summary Mode: Create concise study notes
+- Discussion Mode: Socratic dialogue for deeper understanding
+
+**3. Memory Management**
+- Remember topics you're studying
+- Track what you've already learned
+- Maintain conversation context
+- Save and load study sessions
+
+**4. Structured Output**
+- Parse explanations into key points
+- Extract important terms and definitions
+- Create formatted study guides
+- Generate quiz questions with answers
+
+**5. Production Quality**
+- Comprehensive error handling
+- Fallback to simpler models if primary fails
+- Performance monitoring with response times
+- Debug mode for troubleshooting
+- Clean, interactive command-line interface
+
+### Core Features to Implement:
+- Topic classifier that routes to appropriate chains
+- Different prompt templates for each mode
+- Conversation memory that persists between sessions
+- Output parsers for structured study materials
+- Cost tracking across different models
+- Automatic model selection based on query complexity
+
+### Bonus Challenges:
+- Add a "learning path" that sequences topics
+- Create flashcards from conversations
+- Generate practice problems
+- Track learning progress over time
+- Export study materials to markdown
+
+### Success Criteria:
+- Handles at least 4 different study modes
+- Switches seamlessly between providers
+- Maintains context across 20+ message conversations
+- Produces structured, parseable output
+- Never crashes on errors (graceful fallbacks)
+- Actually helps you learn something!

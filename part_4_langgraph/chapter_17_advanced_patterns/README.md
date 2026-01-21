@@ -391,3 +391,83 @@ Build an article generator with fact-checking:
 - Continue until all claims pass OR max 3 iterations
 
 > `part_4_langgraph/chapter_17_advanced_patterns/exercise_3_17_6_solution.py`
+
+---
+
+## Challenge Project: Multi-Agent Research System
+
+### The Challenge: Build a Research Team
+
+Create a complete multi-agent research system that demonstrates ALL the advanced patterns from this chapter:
+
+**Scenario**: Build a "Research Team" that takes a research question and produces a comprehensive report. The team includes:
+
+1. **Research Planner** - Plans the research approach (uses dynamic graph construction)
+2. **Parallel Researchers** - Multiple agents researching different aspects (parallel execution)
+3. **Fact Checker** - Validates claims in the research (feedback loop)
+4. **Editor** - Reviews and improves the report (human-in-the-loop)
+5. **Final Reporter** - Compiles everything into a polished report
+
+### Requirements
+
+**Must Include These Patterns:**
+
+1. **Human-in-the-Loop** (17.1)
+   - Editor approval step before finalizing
+   - Human can request revisions or approve
+
+2. **Streaming** (17.2)
+   - Stream progress updates during research
+   - Show which researcher is currently working
+
+3. **Parallel Execution** (17.3)
+   - At least 3 parallel research tasks
+   - Use `Send` for dynamic parallelization based on planner output
+
+4. **Subgraphs** (17.4)
+   - Fact-checker as a reusable subgraph
+   - Editor workflow as a separate subgraph
+
+5. **Dynamic Construction** (17.5)
+   - Planner determines how many researchers needed
+   - Graph adapts based on research topic
+
+6. **Feedback Loops** (17.6)
+   - Fact-checker iterates until claims verified
+   - Quality score must reach threshold before editor review
+
+**State Requirements:**
+```python
+class ResearchState(TypedDict):
+    question: str
+    research_plan: list[str]
+    research_results: Annotated[list[dict], operator.add]
+    fact_check_results: list[dict]
+    draft_report: str
+    editor_feedback: str
+    editor_approved: bool
+    final_report: str
+    iteration: int
+    quality_score: float
+```
+
+### Success Criteria
+
+Your solution should:
+
+- Execute parallel research based on planner output
+- Stream progress updates during execution
+- Iterate fact-checking until quality threshold met
+- Pause for human editor review
+- Allow editor to request revisions
+- Use subgraphs for fact-checker and editor
+- Track all state properly with checkpointing
+- Include error handling for robustness
+
+### Bonus Challenges
+
+**Level 1**: Add token/cost tracking across the entire research process
+
+**Level 2**: Implement a "confidence score" that routes to more researchers if initial results are uncertain
+
+**Level 3**: Add a web search tool that researchers can actually use (simulated or real)

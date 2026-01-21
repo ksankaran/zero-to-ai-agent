@@ -320,3 +320,77 @@ Create an analyzer that shows:
 - Conversation trends over time
 
 ► `exercise_3_8_6_solution.py`
+
+---
+
+## Challenge Project: Build "ARIA" - Your Adaptive Research & Information Assistant
+
+Build a complete AI assistant that combines EVERYTHING you've learned:
+
+### Core Requirements:
+
+**1. Multi-Mode Operation**
+- Research Mode: Helps with learning and research
+- Creative Mode: Assists with writing and brainstorming
+- Code Mode: Helps with programming tasks
+- Analysis Mode: Analyzes data and provides insights
+
+**2. Smart Conversation Management**
+- Automatic session creation with meaningful titles
+- Conversation search across all sessions
+- Auto-save every 5 messages
+- Daily summaries of conversations
+
+**3. Robust Error Handling**
+- Gracefully handle all API errors
+- Implement exponential backoff for retries
+- Rate limit awareness
+- User-friendly error messages
+
+**4. Cost Consciousness**
+- Track tokens per conversation
+- Show cost estimates in real-time
+- Daily/weekly cost summaries
+- Warning when approaching budget limits
+
+**5. Export Capabilities**
+- Export conversations to HTML, Markdown, and JSON
+- Generate conversation summaries
+- Create weekly activity reports
+
+### Bonus Challenges:
+
+**Level 1**: Add conversation templates (interview prep, brainstorming session, code review)
+
+**Level 2**: Implement conversation merging (combine related conversations into one)
+
+**Level 3**: Add a "memory" system where ARIA remembers key facts across conversations
+
+### Starter Structure:
+
+```python
+# aria.py - Your Adaptive Research & Information Assistant
+
+class ARIA:
+    """Your personal AI assistant that never forgets"""
+
+    def __init__(self):
+        # Initialize all components you've learned
+        pass
+
+    def run(self):
+        """Main assistant loop"""
+        print(" ARIA - Adaptive Research & Information Assistant")
+        print("=" * 60)
+        print("I'm your AI assistant with perfect memory!")
+        # Your implementation here
+```
+
+### Success Criteria:
+
+Your ARIA should:
+- Never crash (handles all errors gracefully)
+- Remember everything (saves all conversations)
+- Be helpful in multiple contexts (different modes)
+- Be cost-effective (tracks and reports costs)
+- Be searchable (find any past conversation)

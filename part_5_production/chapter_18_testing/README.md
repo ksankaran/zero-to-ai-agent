@@ -174,3 +174,74 @@ Build an evaluator that compares two different agent responses to the same quest
 Create a simple evaluation reporting function that takes a list of evaluation results and generates a summary report. The report should include: overall pass rate, breakdown by criterion, the worst-performing cases (for debugging), and trend information if historical data is available.
 
 > `part_5_production/chapter_18_testing/exercise_3_18_3_solution.py`
+
+---
+
+## Challenge Project: Build a Quality Dashboard for Your Agent
+
+### The Challenge
+
+Create a comprehensive testing and evaluation system for an agent of your choice. This project integrates everything you've learned into a working quality management system.
+
+### Requirements
+
+**1. The Agent**
+
+Either use an agent you've built in previous chapters or create a simple one for this exercise. A customer service agent or FAQ bot works well.
+
+**2. Unit Test Suite**
+
+Create unit tests covering:
+- At least 3 tool functions
+- State transformation logic
+- Routing decisions
+- At least one test with a mocked LLM
+
+**3. Integration Test Suite**
+
+Create integration tests covering:
+- A complete happy-path workflow
+- Error handling scenarios
+- At least one multi-turn conversation test
+
+**4. Evaluation Dataset**
+
+Build a test dataset with:
+- At least 20 test cases
+- Cases organized by category
+- Expected outputs or evaluation criteria for each
+- A mix of easy, medium, and hard cases
+
+**5. Evaluation Pipeline**
+
+Implement an evaluation system that:
+- Runs your agent against the test dataset
+- Evaluates responses using at least two criteria
+- Produces aggregate metrics (pass rate, average score)
+- Identifies worst-performing cases
+
+**6. Quality Report**
+
+Generate a report showing:
+- Overall metrics
+- Breakdown by category
+- Specific failures to investigate
+- Trend data (if you run evaluation multiple times)
+
+### Bonus Challenges
+
+**Level 1**: Add an A/B testing capability that can compare two versions of a prompt
+
+**Level 2**: Implement automated daily evaluation that logs results to a file
+
+**Level 3**: Build a simple web dashboard that visualizes metrics over time
+
+### Success Criteria
+
+Your quality system should be able to:
+- Tell you the current accuracy of your agent (overall and by category)
+- Identify the specific cases where your agent struggles
+- Detect if a change makes things better or worse
+- Run automatically without manual intervention
+
+This project transforms you from someone who builds agents to someone who builds *reliable* agents - and that's what production systems require.

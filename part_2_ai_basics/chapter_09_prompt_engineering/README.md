@@ -369,3 +369,51 @@ Design and run:
 - Recommendation based on results
 
 ► `exercise_3_9_5_solution.py`
+
+---
+
+## Challenge Project: The Prompt Engineering Workshop
+
+Create a collection of specialized AI assistants for different tasks, each showcasing different prompt engineering techniques.
+
+### Project: Multi-Purpose AI Assistant Suite
+
+**Requirements:**
+
+**1. Create 5 Specialized Assistants:**
+- Code Reviewer (using Role + CoT pattern)
+- Data Analyst (using few-shot learning)
+- Creative Writer (using persona + constraints)
+- Teacher (using simplifier + examples)
+- Project Manager (using format + alternatives)
+
+**2. For Each Assistant:**
+- Write a comprehensive system prompt
+- Create 3 task-specific prompt templates
+- Include 2-3 few-shot examples
+- Document the patterns used
+
+**3. Testing Framework:**
+- 3 test cases per assistant
+- Scoring rubric for quality
+- Iteration log showing improvements
+- A/B test comparing two approaches
+
+**4. Documentation:**
+- README explaining each assistant's purpose
+- Usage examples for each
+- Best practices discovered
+- Common failure modes and solutions
+
+**5. Bonus Challenges:**
+- Create a "prompt optimizer" that improves other prompts
+- Build a prompt version control system
+- Design a prompt that can adapt based on user expertise level
+
+### Success Metrics:
+- Each assistant achieves 85%+ quality score
+- Clear documentation anyone can follow
+- Measurable improvement through iterations
+- Reusable templates for real projects
+
+This project brings together everything you've learned about prompt engineering into a practical, portfolio-worthy system you can actually use!

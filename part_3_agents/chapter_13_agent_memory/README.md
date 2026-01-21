@@ -338,3 +338,38 @@ Create an agent that:
 4. Demonstrates memory works across tool calls
 
 ► `part_3_agents/chapter_13_agent_memory/exercise_3_13_6_solution.py`
+
+---
+
+## Challenge Project: Personal AI Assistant with Production-Ready Memory
+
+Time to put everything together! Build a complete personal AI assistant with production-ready memory management.
+
+> `part_3_agents/chapter_13_agent_memory/personal_assistant_challenge.py`
+
+### Requirements:
+
+Your assistant must:
+1. **Remember conversations** across sessions (persistence)
+2. **Track entities** mentioned in conversations
+3. **Use tools** (at least 2: calculator and weather)
+4. **Implement semantic search** to recall past conversations
+5. **Auto-summarize** when conversations get long
+6. **Handle privacy** with PII filtering
+7. **Implement cleanup** with 30-day retention
+8. **Support multiple users** with isolated memories
+
+### Bonus Challenges:
+- Add a "remember" command for explicit fact storage
+- Implement importance-based cleanup
+- Add conversation export (GDPR compliance)
+- Build a simple CLI interface
+- Track and report memory metrics
+
+### Evaluation Criteria:
+- Does it remember across sessions?
+- Can it use tools correctly?
+- Does semantic search find relevant past conversations?
+- Are entities tracked properly?
+- Does summarization trigger appropriately?
+- Is PII filtered before storage?

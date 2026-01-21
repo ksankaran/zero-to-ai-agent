@@ -367,3 +367,37 @@ Create a function that produces a summary report:
 - Routing decisions made
 
 ► `part_4_langgraph/chapter_14_langgraph_intro/exercise_3_14_7_solution.py`
+
+---
+
+## Challenge Project: Build a Multi-Stage Document Analyzer
+
+Put everything together by building a sophisticated document analysis agent.
+
+> `part_4_langgraph/chapter_14_langgraph_intro/document_analyzer_challenge.py`
+
+### Requirements:
+- At least 6 nodes
+- Multi-way branching based on document type (4+ branches)
+- A quality-check loop (generate → evaluate → maybe regenerate)
+- Maximum iteration limits
+
+### State Must Include:
+- Document text and classification
+- Extracted information (`Annotated[list, add]`)
+- Quality scores and iteration counters
+
+### Document Type Handlers:
+- **Technical**: Extract methods, findings, technologies
+- **Business**: Extract metrics, decisions, action items
+- **Legal**: Extract parties, obligations, dates
+- **Academic**: Extract thesis, methodology, conclusions
+
+### Evaluation Criteria:
+- Does classification correctly identify document types?
+- Does routing send documents to the correct extraction node?
+- Does the quality loop retry when extraction is poor?
+- Does it respect the maximum iteration limit?
+- Are extracted items accumulating (not replacing)?
+
+This project uses everything from Chapter 14: state design, multiple nodes, multi-way branching, looping, and debugging.

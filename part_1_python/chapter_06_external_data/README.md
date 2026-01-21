@@ -491,3 +491,93 @@ Create an inventory management system with CSV.
 - Use a threshold variable for low stock
 
 ► `exercise_3_6_6_solution.py`
+
+---
+
+## Challenge Project: Build Your Own Data Pipeline
+
+### The Challenge: Create a Data Processing System
+
+Now it's time to combine everything you've learned in Chapter 6 into one powerful project!
+
+> `part_1_python/chapter_06_external_data/dashboard_challenge.py`
+
+### What You'll Build:
+
+A **Data Pipeline** - a system that takes raw data, processes it, and outputs clean, useful information. Think of it like a factory assembly line for data!
+
+```python
+class DataPipeline:
+    """
+    A system that processes data through stages:
+    Raw Data → Load → Clean → Transform → Save → Useful Output!
+    """
+
+    def __init__(self):
+        self.data = []  # Your data will live here
+
+    def load_csv(self, filename):
+        """Load data from a CSV file"""
+        # You'll implement this!
+
+    def clean(self):
+        """Remove bad data, fix formats"""
+        # You'll implement this!
+
+    def save(self, output_file):
+        """Save the processed data"""
+        # You'll implement this!
+```
+
+### Your Mission:
+
+Build a data pipeline that processes real-world data using ALL the skills from Chapter 6:
+
+1. **Files** (Section 6.1) → Read and write data files
+2. **JSON** (Section 6.2) → Save data in JSON format
+3. **APIs** (Section 6.3) → Fetch fresh data from the internet
+4. **Error Handling** (Section 6.4) → Handle problems gracefully
+5. **Environment Variables** (Section 6.5) → Keep API keys secure
+6. **CSV** (Section 6.6) → Process spreadsheet data
+
+### Pick Your Project:
+
+Choose one of these starter projects (or create your own!):
+
+#### Option 1: Weather Tracker
+```python
+# Process weather for multiple cities
+pipeline = DataPipeline()
+pipeline.load_csv("cities.csv")  # List of cities
+pipeline.fetch_weather()          # Get weather from API
+pipeline.save("weather_report.csv")
+```
+
+#### Option 2: Expense Analyzer
+```python
+# Process and analyze expenses
+pipeline = DataPipeline()
+pipeline.load_csv("expenses.csv")  # Your expenses
+pipeline.clean()                   # Fix messy data
+pipeline.calculate_totals()        # Add analysis
+pipeline.save("expense_report.json")
+```
+
+#### Option 3: News Aggregator
+```python
+# Collect and organize news
+pipeline = DataPipeline()
+pipeline.load_csv("topics.csv")    # Topics to search
+pipeline.fetch_news()              # Get from news API
+pipeline.save("daily_digest.txt")
+```
+
+### Build Up in Phases:
+
+**Phase 1**: Get basic pipeline working (load CSV, save CSV)
+
+**Phase 2**: Add data cleaning (remove empty rows, fix formats)
+
+**Phase 3**: Add APIs (fetch fresh data from weather, news, or prices)
+
+**Phase 4**: Make it professional (error handling, environment variables, logging)
