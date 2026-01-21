@@ -451,6 +451,10 @@ class ResearchState(TypedDict):
     quality_score: float
 ```
 
+**Flow Diagram:**
+
+![Multi-agent research system](ch17_7_research_system.png)
+
 ### Success Criteria
 
 Your solution should:
